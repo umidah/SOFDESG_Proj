@@ -1,16 +1,19 @@
 package sample;
 
+import com.opencsv.CSVWriter;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.DirectoryChooser;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -111,10 +114,16 @@ public class Controller {
     @FXML
     void writeToFile(){
         int ind = list.getSelectionModel().getSelectedIndex();
-        String filename = list.getSelectionModel().getSelectedItem() + ".csv";
+        DirectoryChooser fileChooser = new DirectoryChooser();
+        fileChooser.setTitle("Save Location");
+        File file = fileChooser.showDialog(loadButton.getScene().getWindow());
+        String filename = file.toString() + "/" + items.get(ind).getName() + ".csv";
+        System.out.println(filename);
         try{
-            if (ind > -1)
-                items.get(ind).outputValues(filename);
+            checkItem item = items.get(ind);
+            CSVWriter writer = new CSVWriter(new FileWriter(filename));
+            writer.writeNext(item.getConfig());
+            item.outputValues(filename);
         }
         catch (ArrayIndexOutOfBoundsException | IOException e){
             e.printStackTrace();

@@ -2,9 +2,13 @@ package sample;
 
 import com.opencsv.CSVWriter;
 import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
+import java.awt.*;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -47,6 +51,14 @@ public class checkItem extends VBox {
 
     public String getName(){
         return title.getText();
+    }
+
+    public String[] getConfig(){
+        String[] strings = new String[boxes.size()];
+        for (int i = 0; i < boxes.size() ; i++){
+            strings[i] = boxes.get(i).getNumText();
+        }
+        return strings;
     }
 
     private void addItem(String str){
@@ -133,8 +145,8 @@ public class checkItem extends VBox {
         String[] row = new String[boxes.size()];
         int c = 0;
         for(HBoxWidgetAbstract a : boxes){
-            String s = "hi";
-            row[c++] = s;
+            row[c++] = a.getValue().getValue().toString();
+            System.out.println(a.getValue().getValue().toString());
         }
         writer.writeNext(row);
         writer.close();
