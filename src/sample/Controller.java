@@ -1,13 +1,20 @@
 package sample;
 
+import javafx.event.Event;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextField;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -19,6 +26,7 @@ import java.util.Scanner;
 
 
 public class Controller {
+
 
     //FXML Objects
     @FXML
@@ -37,6 +45,29 @@ public class Controller {
     Button loadButton = new Button();
     @FXML
     Button writeButton = new Button();
+    @FXML
+    Text Add_Text = new Text();
+    @FXML
+    Text Delete_Text = new Text();
+    @FXML
+    Text Save_Text = new Text();
+    @FXML
+    Text Load_Text = new Text();
+    @FXML
+    Text Write_Text = new Text();
+    @FXML
+    Menu adding_help = new Menu();
+    @FXML
+    Menu deleting_help = new Menu();
+    @FXML
+    Menu saving_help = new Menu();
+    @FXML
+    Menu loading_help = new Menu();
+    @FXML
+    Menu writing_help = new Menu();
+
+
+    Stage Help_Window = new Stage();
 
     //not-FXML Objects and Properties
     private LinkedList<checkItem> items = new LinkedList<>();
@@ -140,5 +171,66 @@ public class Controller {
         for(checkItem x : items){
             list.getItems().add(x.getName());
         }
+    }
+
+    @FXML
+    void open_Help() throws IOException{
+        Parent root = FXMLLoader.load(getClass().getResource("help.fxml"));
+        Help_Window.setTitle("About");
+        Help_Window.setScene(new Scene(root));
+        //Icons made by <a href="https://www.flaticon.com/authors/prettycons" title="prettycons">prettycons</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
+        Help_Window.getIcons().add(new Image("file:C:\\Users\\ambro\\Downloads\\SOFDESG_Proj-master\\SOFDESG_Proj-master\\src\\sample\\info.png"));
+        Help_Window.show();
+    }
+
+    @FXML
+    void add_Help(){
+        Add_Text.setVisible(true);
+        Delete_Text.setVisible(false);
+        Save_Text.setVisible(false);
+        Load_Text.setVisible(false);
+        Write_Text.setVisible(false);
+    }
+
+    @FXML
+    void delete_Help(){
+        Add_Text.setVisible(false);
+        Delete_Text.setVisible(true);
+        Save_Text.setVisible(false);
+        Load_Text.setVisible(false);
+        Write_Text.setVisible(false);
+    }
+
+    @FXML
+    void save_Help(){
+        Add_Text.setVisible(false);
+        Delete_Text.setVisible(false);
+        Save_Text.setVisible(true);
+        Load_Text.setVisible(false);
+        Write_Text.setVisible(false);
+    }
+
+    @FXML
+    void load_Help(){
+        Add_Text.setVisible(false);
+        Delete_Text.setVisible(false);
+        Save_Text.setVisible(false);
+        Load_Text.setVisible(true);
+        Write_Text.setVisible(false);
+    }
+
+    @FXML
+    void write_Help(){
+        Add_Text.setVisible(false);
+        Delete_Text.setVisible(false);
+        Save_Text.setVisible(false);
+        Load_Text.setVisible(false);
+        Write_Text.setVisible(true);
+    }
+
+
+    @FXML
+    void close_Help(){
+        Write_Text.getScene().getWindow().hide();
     }
 }

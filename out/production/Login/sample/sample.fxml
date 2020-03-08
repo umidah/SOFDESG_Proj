@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<GridPane alignment="center" hgap="10" prefHeight="453.0" prefWidth="515.0" vgap="10" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <columnConstraints>
+      <ColumnConstraints maxWidth="525.8000732421875" minWidth="514.6000610351563" prefWidth="523.400048828125" />
+      <ColumnConstraints maxWidth="15.99993896484375" minWidth="4.7999267578125" prefWidth="7.199951171875" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints maxHeight="443.19999999999993" minHeight="412.0" prefHeight="443.19999999999993" />
+      <RowConstraints maxHeight="31.19999999999999" minHeight="0.0" prefHeight="0.0" />
+   </rowConstraints>
+   <children>
+      <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="466.0" prefWidth="569.0">
+        <items>
+          <AnchorPane prefHeight="324.0" prefWidth="551.0">
+               <children>
+                  <VBox layoutX="175.0" prefHeight="274.0" prefWidth="171.0">
+                     <children>
+                        <ImageView fitHeight="150.0" fitWidth="192.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@ECM.png" />
+                           </image></ImageView>
+                        <Label prefHeight="112.0" prefWidth="244.0" text="ECM">
+                           <font>
+                              <Font name="Century Gothic Bold" size="77.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+          <AnchorPane>
+               <children>
+                  <Label layoutX="83.0" layoutY="57.0" text="Username" />
+                  <Label layoutX="84.0" layoutY="102.0" text="Password" />
+                  <PasswordField fx:id="password" layoutX="174.0" layoutY="98.0" />
+                  <TextField fx:id="username" layoutX="174.0" layoutY="53.0" />
+                  <HBox layoutX="370.0" layoutY="97.0" prefHeight="38.0" prefWidth="157.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#Loginpressed" text="Login" />
+                        <Region prefHeight="26.0" prefWidth="22.0" />
+                        <Button fx:id="exit" mnemonicParsing="false" onAction="#Exitpressed" prefHeight="26.0" prefWidth="46.0" text="Exit" />
+                     </children>
+                  </HBox>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</GridPane>

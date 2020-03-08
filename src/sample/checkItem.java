@@ -3,7 +3,10 @@ package sample;
 import com.opencsv.CSVWriter;
 import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -21,6 +24,8 @@ public class checkItem extends VBox {
     private ToggleGroup typeTogggle;
     private Button addComp;
     private VBox components;
+    private Region spacer;
+    private Region spacer1;
 
     //types of widgets
     String[] types = new String[]{"Checkbox", "Slider", "RadioButton"};
@@ -29,6 +34,13 @@ public class checkItem extends VBox {
 
     checkItem(String title){
         this.title = new Label(title);
+        this.title.setFont(Font.font("Courier New", FontWeight.BOLD, 30));
+        this.title.setUnderline(true);
+
+
+        spacer = new Region();
+        spacer.setPrefSize(10,20);
+
         componentField = new TextField();
         addComp = new Button("Add");
         typeTogggle = new ToggleGroup();
@@ -42,7 +54,7 @@ public class checkItem extends VBox {
         addComp.setOnAction(event -> addItem(componentField.getText()));
         componentField.setOnAction(event -> addItem(componentField.getText()));
         HBox hBox = new HBox(componentField, addComp);
-        this.getChildren().addAll(this.title, types, hBox, this.components);
+        this.getChildren().addAll(this.title,spacer, types, hBox, this.components);
     }
 
     public String getName(){
