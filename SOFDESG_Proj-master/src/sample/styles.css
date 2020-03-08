@@ -1,0 +1,20 @@
+.button{
+    -fx-background-color: darkslateblue;
+    -fx-text-fill: white;
+    -fx-border-radius: 5;
+    -fx-padding: 3 6 6 6;
+}
+
+.button:hover{
+    -fx-background-color: white;
+    -fx-text-fill: darkslateblue;
+    -fx-border-color: darkslateblue;
+    -fx-border-radius: 5;
+    -fx-padding: 2 5 5 5;
+}
+
+.root{
+    -fx-font-family: 'Courier New';
+
+}
+
