@@ -19,7 +19,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class checkItem extends VBox {
-    private ArrayList<HBoxWidgetAbstract> boxes = new ArrayList<>();
+    public ArrayList<HBoxWidgetAbstract> boxes = new ArrayList<>();
     private ArrayList<value> values = new ArrayList<>();
     private int count = 0;
     private Label title;
@@ -102,11 +102,9 @@ public class checkItem extends VBox {
         switch (ident) {
             case "Checkbox":
                 boxes.add(new CheckBoxLabel(str + " ", count + 1));
-                //criteria.add(new criterion(str + " ", 1, count + 1));
                 break;
             case "Slider":
                 boxes.add(new HSliderLabel(str + " ", count + 1));
-                //criteria.add(new criterion(str + " ", 2, count + 1));
                 break;
             case "RadioButton":
                 boxes.add(new RadioButtonLabel(str + " ", count + 1));

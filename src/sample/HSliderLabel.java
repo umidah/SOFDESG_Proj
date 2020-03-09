@@ -8,11 +8,11 @@ class HSliderLabel extends HBoxWidgetAbstract {
     private Label dLabel;
     private Label label;
     private Label number;
-    public value value;
+    private value value;
     private double sliderVal;
 
     HSliderLabel(String text, int count){
-        label = new Label(text + ".\t");
+        label = new Label(text);
         dLabel = new Label("0.0");
         number = new Label(count + ".");
         slider = new Slider(0.0d, 10.0d, 0.0d);

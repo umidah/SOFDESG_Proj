@@ -15,7 +15,7 @@ public class RadioButtonLabel extends HBoxWidgetAbstract {
     private static final int max = 5;
 
     RadioButtonLabel(String label, int number){
-        this.label = new Label(label + ".\t");
+        this.label = new Label(label);
         this.number = new Label(number + ". ");
         radioButtons = new ArrayList<>();
         value = new value(0, "@");

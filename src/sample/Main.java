@@ -31,7 +31,7 @@ public class Main extends Application {
         //Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
         //Icons made by <a href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect">Pixel perfect</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
         //Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
-        primaryStage.getIcons().add(new Image("file:C:\\Users\\ambro\\Downloads\\SOFDESG_Proj-master\\SOFDESG_Proj-master\\src\\sample\\checklist.png"));
+        primaryStage.getIcons().add(new Image("sample/checklist.png"));
         primaryStage.show();
     }
 
