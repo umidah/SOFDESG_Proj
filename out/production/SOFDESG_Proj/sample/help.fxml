@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="386.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="386.0">
+        <menus>
+          <Menu fx:id="adding_help" mnemonicParsing="false" onHiding="#add_Help" onShowing="#add_Help" text="Adding">
+               <items>
+                  <MenuItem mnemonicParsing="false" />
+               </items>
+          </Menu>
+          <Menu fx:id="deleting_help" mnemonicParsing="false" onHiding="#delete_Help" onShowing="#delete_Help" text="Deleting">
+               <items>
+                  <MenuItem mnemonicParsing="false" />
+               </items>
+          </Menu>
+          <Menu fx:id="saving_help" mnemonicParsing="false" onAction="#save_Help" onHiding="#save_Help" onShowing="#save_Help" text="Saving">
+               <items>
+                  <MenuItem mnemonicParsing="false" />
+               </items>
+          </Menu>
+            <Menu fx:id="loading_help" mnemonicParsing="false" onAction="#load_Help" onHiding="#load_Help" onShowing="#load_Help" text="Loading">
+               <items>
+                  <MenuItem mnemonicParsing="false" />
+               </items>
+            </Menu>
+            <Menu fx:id="writing_help" mnemonicParsing="false" onAction="#write_Help" onHiding="#write_Help" onShowing="#write_Help" text="Writing">
+               <items>
+                  <MenuItem mnemonicParsing="false" />
+               </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+      <Button fx:id="Close_Help" layoutX="167.0" layoutY="361.0" mnemonicParsing="false" onAction="#close_Help" text="Close" />
+      <Text fx:id="Add_Text" layoutX="29.0" layoutY="76.0" strokeType="OUTSIDE" strokeWidth="0.0" text="The user can input the name of the checklist in the textbox provided. A button with the label “add” is present to create the checklist. Created checklists will appear in the list view and it can be selected. " visible="false" wrappingWidth="327.13671875">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Text>
+      <Text fx:id="Delete_Text" layoutX="26.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="The user can click the checklist that is for removal. The checklist will then be removed from the list view and will be deleted." visible="false" wrappingWidth="327.13671875">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Text>
+      <Text fx:id="Save_Text" layoutX="29.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="The user can click the button “save” to overwrite the excel file for data. The input that was done by the user can be seen in a table format. Saved data for the condition of the equipment will be put in a .csv file." visible="false" wrappingWidth="327.13671875">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Text>
+      <Text fx:id="Load_Text" layoutX="29.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="The user can select the checklists made before by clicking on them. The elements of the selected checklists will appear. Selected checklists will appear on the right side of the window to show the elements inside." visible="false" wrappingWidth="327.13671875">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Text>
+      <Text fx:id="Write_Text" layoutX="29.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="327.13671875">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>
